@@ -11,7 +11,7 @@ type nthDay struct {
 }
 
 var nthDays = []nthDay {
-	{1,"a", "first", "Patridge in a Pear Tree"},
+	{1,"a", "first", "Partridge in a Pear Tree"},
 	{2, "two","second", "Turtle Doves" },
 	{3, "three","third", "French Hens"},
 	{4, "four","fourth", "Calling Birds"},
@@ -35,9 +35,9 @@ func Song () string{
 
 	// construct gifts string by iterating back and appending to string each gift.
 
-	for i := 1; i > 12; i ++ {
+	for i := 1; i <= 12; i ++ {
 
-		song += Verse(i )
+		song += Verse(i) + "\n"
 
 	}
 	return song
@@ -47,7 +47,10 @@ func Song () string{
 
 func Verse(i int) string {
 
-	verse:= fmt.Sprintf("On the %s day of Christmas my true love gave to me: %s", nthDays[i - 1].count, Gifts(i))
+	verse:= fmt.Sprintf("On the %s day of Christmas my true love gave to me: %s", nthDays[i - 1].count, Gifts(i-1))
+
+	// currently getting "and a partidge ..." every time
+	// want it only when its not verse 1
 
 	return verse
 }
@@ -59,10 +62,11 @@ func Gifts(day int) string {
 	for i := day; i >= 0; i = i - 1 {
 		punct := ", "
 		if i == 0 {
-			gifts += "and "
+			if day != 0 {
+				gifts += "and "
+			}
 			punct = "."
 		}
-		fmt.Println(nthDays[i].numName + " " + nthDays[i].object)
 		gifts += nthDays[i].numName + " " + nthDays[i].object + punct
 
 	}
