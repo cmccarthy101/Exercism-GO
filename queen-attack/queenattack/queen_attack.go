@@ -73,6 +73,6 @@ func CanQueenAttack(wQueen string, bQueen string) (bool, error) {
 	if pieceCanAttack(wQueen, bQueen) {
 		return true, nil
 	}
-	
+
 	return false, nil
 }
