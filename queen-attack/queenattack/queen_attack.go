@@ -26,9 +26,9 @@ func pieceOnInvalidSquare(pos string) (invalid bool) {
 
 	if ColOutOfRange || RowOutOfRange {
 		return true
+	}else {
+		return false
 	}
-
-	return false
 }
 
 func pieceCanAttack(wPos string, bPos string) bool {
@@ -43,9 +43,9 @@ func piecesOnSameRowOrCol(wPos string, bPos string) bool {
 
 	if wCol == bCol || wRow == bRow {
 		return true
+	} else {
+		return false
 	}
-
-	return false
 }
 
 func piecesOnSameDiagonal (wPos string, bPos string) bool {
@@ -57,9 +57,9 @@ func piecesOnSameDiagonal (wPos string, bPos string) bool {
 
 	if  math.Abs(wColNum-bColNum) == math.Abs(wRowNum-bRowNum) {
 		return true
+	} else {
+		return false
 	}
-
-	return false
 }
 
 func CanQueenAttack(wQueen string, bQueen string) (bool, error) {
@@ -73,6 +73,6 @@ func CanQueenAttack(wQueen string, bQueen string) (bool, error) {
 	if pieceCanAttack(wQueen, bQueen) {
 		return true, nil
 	}
-
+	
 	return false, nil
 }
