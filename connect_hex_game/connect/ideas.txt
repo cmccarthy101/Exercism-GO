@@ -81,5 +81,26 @@
 
     alright so i can make nodes, now time to try make a graph.
 
+    what is the graph? a graph is something like this:
 
-    
+      A| -> B -> D -> E
+      B| -> C -> D
+      C| -> B -> D
+      D| -> F
+      E| -> D
+      F| -> C
+
+         >C<
+        /   \
+     >B<     \
+    /   \↓     \
+    A---->D----> F
+    \    ^
+     \ >E|
+
+    first, make a very simple graph.
+
+    graph init function will take in a Board, and add all the edges to it
+
+    first things's first, make an edge making func
+
