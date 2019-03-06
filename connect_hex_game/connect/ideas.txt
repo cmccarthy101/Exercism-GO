@@ -104,3 +104,30 @@
 
     first things's first, make an edge making func
 
+
+    woo ok so the edges are working nicely, wonderful.
+    ok so next is to a routing algorithm.
+    dfs is probably best.
+
+    ok so how does dfs work? well
+
+    - start at a node. tick it as checked. look at its connected nodes.
+    - pick a node that's not connected. tick it checked
+    - do the same for new node, check connected, go to one, check it.
+    - need a queue
+
+
+
+    ok so, we need to implement dfs
+
+    this is a search algorithm for a graph that gets every point.
+    I have done an initial queue of nodes that are on the edge and are ready to go.
+
+
+    i want to go into that queue, go to the first node, and start
+    get connected to that node, and put them in a queue
+    go into that queue and start again.
+    recursive
+
+
+    works but not for some edge cases, let's explore
